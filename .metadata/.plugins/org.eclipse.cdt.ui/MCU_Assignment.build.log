@@ -1,0 +1,33 @@
+15:28:51 **** Incremental Build of configuration Debug for project MCU_Assignment ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/button.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/button.d" -MT"Core/Src/button.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/button.o"
+../Core/Src/button.c:10:46: error: macro "GPIO_PIN_" requires 2 arguments, but only 1 given
+   10 | uint16_t buttonPin[MAX_BUTTON] = {GPIO_PIN_(1), GPIO_PIN_(4), GPIO_PIN_(0)};
+      |                                              ^
+In file included from ../Core/Src/button.c:8:
+../Core/Inc/button.h:16: note: macro "GPIO_PIN_" defined here
+   16 | #define GPIO_PIN_(port, pin) (port, ((uint16_t)(1 << (pin))))
+      | 
+../Core/Src/button.c:10:35: error: 'GPIO_PIN_' undeclared here (not in a function); did you mean 'GPIO_PIN_SET'?
+   10 | uint16_t buttonPin[MAX_BUTTON] = {GPIO_PIN_(1), GPIO_PIN_(4), GPIO_PIN_(0)};
+      |                                   ^~~~~~~~~
+      |                                   GPIO_PIN_SET
+../Core/Src/button.c:10:60: error: macro "GPIO_PIN_" requires 2 arguments, but only 1 given
+   10 | uint16_t buttonPin[MAX_BUTTON] = {GPIO_PIN_(1), GPIO_PIN_(4), GPIO_PIN_(0)};
+      |                                                            ^
+In file included from ../Core/Src/button.c:8:
+../Core/Inc/button.h:16: note: macro "GPIO_PIN_" defined here
+   16 | #define GPIO_PIN_(port, pin) (port, ((uint16_t)(1 << (pin))))
+      | 
+../Core/Src/button.c:10:74: error: macro "GPIO_PIN_" requires 2 arguments, but only 1 given
+   10 | uint16_t buttonPin[MAX_BUTTON] = {GPIO_PIN_(1), GPIO_PIN_(4), GPIO_PIN_(0)};
+      |                                                                          ^
+In file included from ../Core/Src/button.c:8:
+../Core/Inc/button.h:16: note: macro "GPIO_PIN_" defined here
+   16 | #define GPIO_PIN_(port, pin) (port, ((uint16_t)(1 << (pin))))
+      | 
+make: *** [Core/Src/subdir.mk:40: Core/Src/button.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+
+15:28:51 Build Failed. 5 errors, 0 warnings. (took 697ms)
+
