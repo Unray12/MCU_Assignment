@@ -25,14 +25,9 @@
 #define PEDESTRIAN_AMBER 12
 #define PEDESTRIAN_GREEN 13
 
-#define TUNNING_RED 21
-#define TUNNING_AMBER 22
-#define TUNNING_GREEN 23
-
-#define MANUAL_RED_GREEN 26
-#define MANUAL_RED_AMBER 27
-#define MANUAL_GREEN_RED 28
-#define MANUAL_AMBER_RED 29
+#define MANUAL_RED 21
+#define MANUAL_AMBER 22
+#define MANUAL_GREEN 23
 
 extern int status;
 
