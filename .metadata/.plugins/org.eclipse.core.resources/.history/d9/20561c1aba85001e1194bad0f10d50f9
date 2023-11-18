@@ -30,14 +30,9 @@ void clearTrafficLight();
 void onRed1();
 void onGreen1();
 void onAmber1();
-
 void onRed2();
 void onGreen2();
 void onAmber2();
-
-void onRedPedes();
-void onGreenPedes();
-void onAmberPedes();
 
 
 #endif /* INC_MYLIB_H_ */
