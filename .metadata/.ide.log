@@ -705,3 +705,8 @@
 2023-11-16 14:40:28,753 [INFO] ProjectBuilder:3789 - Time for Generating toolchain IDE Files: 8531mS.
 2023-11-16 14:40:28,753 [INFO] ProjectBuilder:2457 - Time for Copy CMSIS : 0mS.
 2023-11-16 14:40:28,769 [INFO] ProjectBuilder:2457 - Time for Copy CMSIS : 0mS.
+2023-11-16 16:14:27,263 [INFO] NvicIntPanel:96 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,450x155,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2023-11-18 07:46:54,731 [INFO] Activator:177 - 
+
+
+2023-11-18 07:46:54,752 [INFO] Activator:178 - !SESSION log4j initialized

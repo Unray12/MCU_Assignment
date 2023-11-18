@@ -1,0 +1,6 @@
+myLib.c:174:8:onRed1	4	static
+myLib.c:180:8:onAmber1	4	static
+myLib.c:186:8:onGreen1	4	static
+myLib.c:192:8:onRed2	4	static
+myLib.c:198:8:onAmber2	4	static
+myLib.c:204:8:onGreen2	4	static

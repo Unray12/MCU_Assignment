@@ -7,7 +7,16 @@
 
 #include "button.h"
 
-uint16_t buttonPin[MAX_BUTTON] = {GPIO_PIN_(1), GPIO_PIN_(4), GPIO_PIN_(0)};
+struct buttonPinPair {
+	GPIO_TypeDef* GPIOtype;
+	uint16_t buttonPin;
+};
+
+struct buttonPinPair button_pin[MAX_BUTTON] = {
+		{GPIOA, GPIO_PIN_(1)},
+		{GPIOA, GPIO_PIN_(4)},
+		{GPIOB, GPIO_PIN_(0)}
+};
 
 int keyReg0[MAX_BUTTON] = {NORMAL_STATE};
 int keyReg1[MAX_BUTTON] = {NORMAL_STATE};
@@ -35,7 +44,7 @@ void getKeyInput(int index) {
 	keyReg0[index] = keyReg1[index];
 	keyReg1[index] = keyReg2[index];
 
-	keyReg2[index] = HAL_GPIO_ReadPin(GPIOA, buttonPin[index]);
+	keyReg2[index] = HAL_GPIO_ReadPin(button_pin[index].GPIOtype, button_pin[index].buttonPin);
 	if ((keyReg0[index] == keyReg1[index]) && (keyReg1[index] == keyReg2[index])) {
 		if (keyReg3[index] != keyReg2[index]) {
 			keyReg3[index] = keyReg2[index];
