@@ -15,10 +15,10 @@
 
 
 #define INIT 1
-#define AUTO_RED_GREEN 2
-#define AUTO_RED_AMBER 3
-#define AUTO_GREEN_RED 4
-#define AUTO_AMBER_RED 5
+#define RED_GREEN 2
+#define RED_AMBER 3
+#define GREEN_RED 4
+#define AMBER_RED 5
 
 
 #define MAN_RED 21
