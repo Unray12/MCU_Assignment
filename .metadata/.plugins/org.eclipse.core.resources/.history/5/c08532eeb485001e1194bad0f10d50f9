@@ -26,7 +26,6 @@ void enState(uint8_t enIndex);
 void clear7SEG();
 void display7SEG(uint8_t num);
 void clearTrafficLight();
-
 void onRed1();
 void onGreen1();
 void onAmber1();

@@ -12,7 +12,6 @@
 
 #define MAX_TIMER 10
 extern uint8_t timerFlag[MAX_TIMER];
-
 /*
  * timer0:
  * timer1:

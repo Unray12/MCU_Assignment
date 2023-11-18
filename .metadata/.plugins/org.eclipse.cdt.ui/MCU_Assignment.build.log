@@ -1,6 +1,6 @@
-08:46:42 **** Incremental Build of configuration Debug for project MCU_Assignment ****
+08:52:19 **** Incremental Build of configuration Debug for project MCU_Assignment ****
 make -j4 all 
-arm-none-eabi-gcc "../Core/Src/myLib.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/myLib.d" -MT"Core/Src/myLib.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/myLib.o"
+arm-none-eabi-gcc "../Core/Src/software_timer.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/software_timer.d" -MT"Core/Src/software_timer.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/software_timer.o"
 arm-none-eabi-gcc -o "MCU_Assignment.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\HOME\Desktop\New folder\MCU_Assignment\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MCU_Assignment.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: MCU_Assignment.elf
  
@@ -12,9 +12,9 @@ arm-none-eabi-objcopy  -O binary  MCU_Assignment.elf  "MCU_Assignment.bin"
 Finished building: default.size.stdout
  
 Finished building: MCU_Assignment.bin
+ 
 Finished building: MCU_Assignment.list
  
- 
 
-08:46:44 Build Finished. 0 errors, 0 warnings. (took 2s.62ms)
+08:52:21 Build Finished. 0 errors, 0 warnings. (took 1s.813ms)
 
