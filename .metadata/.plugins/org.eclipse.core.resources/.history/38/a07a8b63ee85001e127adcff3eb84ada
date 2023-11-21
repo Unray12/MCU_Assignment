@@ -39,6 +39,7 @@ void subKeyProcess(int index) {
 }
 
 
+
 void getKeyInput(int index) {
 	keyReg0[index] = keyReg1[index];
 	keyReg1[index] = keyReg2[index];

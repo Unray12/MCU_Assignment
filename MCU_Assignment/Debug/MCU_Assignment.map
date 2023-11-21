@@ -222,9 +222,9 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x88 ./Core/Src/global.o
  .debug_macro   0x0000000000000000       0x1c ./Core/Src/global.o
  .debug_macro   0x0000000000000000       0x10 ./Core/Src/global.o
- .debug_macro   0x0000000000000000       0x34 ./Core/Src/global.o
+ .debug_macro   0x0000000000000000       0x5e ./Core/Src/global.o
  .debug_line    0x0000000000000000      0x694 ./Core/Src/global.o
- .debug_str     0x0000000000000000    0x81d27 ./Core/Src/global.o
+ .debug_str     0x0000000000000000    0x81dbd ./Core/Src/global.o
  .comment       0x0000000000000000       0x54 ./Core/Src/global.o
  .ARM.attributes
                 0x0000000000000000       0x33 ./Core/Src/global.o
@@ -358,21 +358,27 @@ Discarded input sections
                 0x0000000000000000        0x4 ./Core/Src/myLib.o
  .data.realRedTime
                 0x0000000000000000        0x4 ./Core/Src/myLib.o
- .text.onRed1   0x0000000000000000        0xc ./Core/Src/myLib.o
+ .text.onRed1   0x0000000000000000       0x24 ./Core/Src/myLib.o
  .text.onAmber1
-                0x0000000000000000        0xc ./Core/Src/myLib.o
+                0x0000000000000000       0x24 ./Core/Src/myLib.o
  .text.onGreen1
-                0x0000000000000000        0xc ./Core/Src/myLib.o
- .text.onRed2   0x0000000000000000        0xc ./Core/Src/myLib.o
+                0x0000000000000000       0x24 ./Core/Src/myLib.o
+ .text.onRed2   0x0000000000000000       0x20 ./Core/Src/myLib.o
  .text.onAmber2
-                0x0000000000000000        0xc ./Core/Src/myLib.o
+                0x0000000000000000       0x20 ./Core/Src/myLib.o
  .text.onGreen2
-                0x0000000000000000        0xc ./Core/Src/myLib.o
- .debug_info    0x0000000000000000      0x292 ./Core/Src/myLib.o
- .debug_abbrev  0x0000000000000000       0xd8 ./Core/Src/myLib.o
+                0x0000000000000000       0x20 ./Core/Src/myLib.o
+ .text.onRedPedes
+                0x0000000000000000       0x24 ./Core/Src/myLib.o
+ .text.onGreenPedes
+                0x0000000000000000       0x24 ./Core/Src/myLib.o
+ .text.onAmberPedes
+                0x0000000000000000       0x24 ./Core/Src/myLib.o
+ .debug_info    0x0000000000000000      0x375 ./Core/Src/myLib.o
+ .debug_abbrev  0x0000000000000000      0x121 ./Core/Src/myLib.o
  .debug_aranges
-                0x0000000000000000       0x48 ./Core/Src/myLib.o
- .debug_ranges  0x0000000000000000       0x38 ./Core/Src/myLib.o
+                0x0000000000000000       0x60 ./Core/Src/myLib.o
+ .debug_ranges  0x0000000000000000       0x50 ./Core/Src/myLib.o
  .debug_macro   0x0000000000000000      0x1b8 ./Core/Src/myLib.o
  .debug_macro   0x0000000000000000      0xa9c ./Core/Src/myLib.o
  .debug_macro   0x0000000000000000      0x215 ./Core/Src/myLib.o
@@ -410,10 +416,10 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x8ed ./Core/Src/myLib.o
  .debug_macro   0x0000000000000000       0x83 ./Core/Src/myLib.o
  .debug_macro   0x0000000000000000       0x88 ./Core/Src/myLib.o
- .debug_line    0x0000000000000000      0x6e5 ./Core/Src/myLib.o
- .debug_str     0x0000000000000000    0x81c48 ./Core/Src/myLib.o
+ .debug_line    0x0000000000000000      0x748 ./Core/Src/myLib.o
+ .debug_str     0x0000000000000000    0x81c9e ./Core/Src/myLib.o
  .comment       0x0000000000000000       0x54 ./Core/Src/myLib.o
- .debug_frame   0x0000000000000000       0xd0 ./Core/Src/myLib.o
+ .debug_frame   0x0000000000000000      0x10c ./Core/Src/myLib.o
  .ARM.attributes
                 0x0000000000000000       0x2d ./Core/Src/myLib.o
  .group         0x0000000000000000        0xc ./Core/Src/software_timer.o
