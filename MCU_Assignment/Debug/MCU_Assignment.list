@@ -389,8 +389,8 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
  80002f0:	2300      	movs	r3, #0
  80002f2:	60fb      	str	r3, [r7, #12]
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
- 80002f4:	2300      	movs	r3, #0
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+ 80002f4:	2301      	movs	r3, #1
  80002f6:	613b      	str	r3, [r7, #16]
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
  80002f8:	f107 0308 	add.w	r3, r7, #8
@@ -424,8 +424,8 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
  8000326:	2300      	movs	r3, #0
  8000328:	60fb      	str	r3, [r7, #12]
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
- 800032a:	2300      	movs	r3, #0
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+ 800032a:	2301      	movs	r3, #1
  800032c:	613b      	str	r3, [r7, #16]
   HAL_GPIO_Init(A3_GPIO_Port, &GPIO_InitStruct);
  800032e:	f107 0308 	add.w	r3, r7, #8

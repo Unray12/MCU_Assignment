@@ -15,8 +15,8 @@ struct buttonPinPair {
 struct buttonPinPair button_pin[MAX_BUTTON] = {
 		{GPIOA, GPIO_PIN_(1)},
 		{GPIOA, GPIO_PIN_(4)},
-		{GPIOB, GPIO_PIN_(0)},
-		{GPIOA, GPIO_PIN_(0)}
+		{GPIOB, GPIO_PIN_(3)},
+		{GPIOA, GPIO_PIN_(0)
 };
 
 int keyReg0[MAX_BUTTON] = {NORMAL_STATE};

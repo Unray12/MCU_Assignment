@@ -12,7 +12,6 @@
 
 /*
  * button0: change mode
- * button3: pedestrian button
  */
 #define MAX_BUTTON 4
 #define NORMAL_STATE GPIO_PIN_SET
