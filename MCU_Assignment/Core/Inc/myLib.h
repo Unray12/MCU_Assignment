@@ -14,8 +14,8 @@
 
 //extern int index7SEGLed;
 //extern int led_buffer[4];
-//extern int currentLed13;
-//extern int currentLed24;
+extern int currentLed13;
+extern int currentLed24;
 extern int realAmberTime; //real time in second
 extern int realGreenTime;
 extern int realRedTime;
