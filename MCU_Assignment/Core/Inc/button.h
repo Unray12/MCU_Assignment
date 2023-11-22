@@ -12,8 +12,9 @@
 
 /*
  * button0: change mode
+ * button3: pedestrian button
  */
-#define MAX_BUTTON 3
+#define MAX_BUTTON 4
 #define NORMAL_STATE GPIO_PIN_SET
 #define PRESSED_STATE GPIO_PIN_RESET
 #define GPIO_PIN_(i) ((uint16_t)(1 << (i)))
