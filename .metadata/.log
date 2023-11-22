@@ -256,3 +256,22 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-11-22 21:10:38.845
 !MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2023-11-22 21:57:49.958 -----------------------------------------------
+eclipse.buildId=Version 1.7.0
+java.version=11.0.10
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  C:\Users\HOME\Desktop\New folder\MCU_Assignment\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\HOME\Desktop\New folder\MCU_Assignment\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-11-22 21:58:00.764
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-11-22 21:58:00.874
+!MESSAGE Log4j initialized with config file C:\Users\HOME\Desktop\New folder\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-11-22 21:58:10.936
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-11-22 21:58:15.607
+!MESSAGE Indexed 'MCU_Assignment' (23 sources, 84 headers) in 4.23 sec: 4,973 declarations; 29,776 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0058%)
