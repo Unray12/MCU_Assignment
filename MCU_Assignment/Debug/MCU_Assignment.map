@@ -72,15 +72,15 @@ Discarded input sections
  .data          0x0000000000000000        0x0 ./Core/Src/button.o
  .bss           0x0000000000000000        0x0 ./Core/Src/button.o
  .data.button_pin
-                0x0000000000000000       0x18 ./Core/Src/button.o
- .data.keyReg0  0x0000000000000000        0xc ./Core/Src/button.o
- .data.keyReg1  0x0000000000000000        0xc ./Core/Src/button.o
- .data.keyReg2  0x0000000000000000        0xc ./Core/Src/button.o
- .data.keyReg3  0x0000000000000000        0xc ./Core/Src/button.o
+                0x0000000000000000       0x20 ./Core/Src/button.o
+ .data.keyReg0  0x0000000000000000       0x10 ./Core/Src/button.o
+ .data.keyReg1  0x0000000000000000       0x10 ./Core/Src/button.o
+ .data.keyReg2  0x0000000000000000       0x10 ./Core/Src/button.o
+ .data.keyReg3  0x0000000000000000       0x10 ./Core/Src/button.o
  .data.timerForKeyPress
                 0x0000000000000000        0x4 ./Core/Src/button.o
  .bss.button_flag
-                0x0000000000000000        0xc ./Core/Src/button.o
+                0x0000000000000000       0x10 ./Core/Src/button.o
  .text.isButtonPressed
                 0x0000000000000000       0x34 ./Core/Src/button.o
  .text.subKeyProcess
@@ -224,7 +224,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x10 ./Core/Src/global.o
  .debug_macro   0x0000000000000000       0x5e ./Core/Src/global.o
  .debug_line    0x0000000000000000      0x694 ./Core/Src/global.o
- .debug_str     0x0000000000000000    0x81dbd ./Core/Src/global.o
+ .debug_str     0x0000000000000000    0x81dba ./Core/Src/global.o
  .comment       0x0000000000000000       0x54 ./Core/Src/global.o
  .ARM.attributes
                 0x0000000000000000       0x33 ./Core/Src/global.o
