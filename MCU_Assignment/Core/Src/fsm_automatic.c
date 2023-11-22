@@ -14,9 +14,6 @@ int	greenTime = 0;
 int led13 = 0; //initial time for that state
 int led24 = 0;
 
-
-
-
 void redGreenLed() {
 	onRed1();
 	onGreen2();
@@ -37,95 +34,93 @@ void amberRedLed() {
 	onRed2();
 }
 
+void countDown() {
+	if (timerFlag[1] == 1) { //for 7 seg leds buffer
+		currentLed13--;
+		currentLed24--;
+		if (currentLed13 < 0)
+			currentLed13 = led13;
+		if (currentLed24 < 0)
+			currentLed24 = led24;
+		updateLedBuffer();
+		setTimer(1, 100);
+	}
+}
 void fsm_automatic_run() {
 	amberTime = realAmberTime * 100;
 	greenTime = realGreenTime * 100;
 	switch (status) {
 	case INIT:
 		clearTrafficLight();
-		status = RED_GREEN;
+		status = AUTO_RED_GREEN;
 		setTimer(0, greenTime);
 
 		led13 = realAmberTime + realGreenTime;
 		led24 = realGreenTime;
 		break;
-	case RED_GREEN:
+	case AUTO_RED_GREEN:
 		redGreenLed();
 		if (isButtonPressed(0) == 1) {
-			status = MAN_RED;
+			status = TUNING_RED;
 			clearTrafficLight();
 			currentLed24 = 2; //mode
 			updateLedBuffer();
-
 //			setTimer(2, 10); //update leds
 
 		}
 		if (timerFlag[0] == 1){
-			status = RED_AMBER;
+			status = AUTO_RED_AMBER;
 
 			led13 = realAmberTime + realGreenTime;
 			led24 = realAmberTime;
 
 			setTimer(0, amberTime);
 		}
+		countDown();
 		break;
-	case RED_AMBER:
+	case AUTO_RED_AMBER:
 		redAmberLed();
 
 		if (timerFlag[0] == 1) {
-			status = GREEN_RED;
+			status = AUTO_GREEN_RED;
 
 			led13 = realGreenTime;
 			led24 = realAmberTime + realGreenTime;
 
 			setTimer(0, greenTime);
 		}
-
+		countDown();
 		isButtonPressed(0);
 		break;
-	case GREEN_RED:
+	case AUTO_GREEN_RED:
 		greenRedLed();
 
 		if (timerFlag[0] == 1) {
-			status = AMBER_RED;
+			status = AUTO_AMBER_RED;
 
 			led13 = realAmberTime;
 			led24 = realAmberTime + realGreenTime;
 
 			setTimer(0, amberTime);
 		}
-
+		countDown();
 		isButtonPressed(0);
 		break;
-	case AMBER_RED:
+	case AUTO_AMBER_RED:
 		amberRedLed();
-
 		if (timerFlag[0] == 1) {
-			status = RED_GREEN;
+			status = AUTO_RED_GREEN;
 
 			led13 = realAmberTime + realGreenTime;
 			led24 = realGreenTime;
 
 			setTimer(0, greenTime);
 		}
-
+		countDown();
 		isButtonPressed(0);
 		break;
 	default:
 		break;
-	}
-	if (status <= 5) {
-		if (timerFlag[1] == 1) { //for 7 seg leds buffer
-			currentLed13--;
-			currentLed24--;
-			if (currentLed13 < 0)
-				currentLed13 = led13;
-			if (currentLed24 < 0)
-				currentLed24 = led24;
-			updateLedBuffer();
-			setTimer(1, 100);
-		}
-
 	}
 }
 

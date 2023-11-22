@@ -153,23 +153,23 @@ int realRedTime = 5;
 //  	  }
 //    }
 //
-//  void clearTrafficLight() {
+  void clearTrafficLight() {
 //  	HAL_GPIO_WritePin(GPIOA, Green1_Pin, SET);
 //  	HAL_GPIO_WritePin(GPIOA, Red1_Pin, SET);
 //  	HAL_GPIO_WritePin(GPIOA, Yellow1_Pin, SET);
 //  	HAL_GPIO_WritePin(GPIOA, Green2_Pin, SET);
 //  	HAL_GPIO_WritePin(GPIOA, Red2_Pin, SET);
 //  	HAL_GPIO_WritePin(GPIOA, Yellow2_Pin, SET);
-//
-//  	led_buffer[0] = 0;
-//  	led_buffer[1] = 0;
-//  	led_buffer[2] = 0;
-//  	led_buffer[3] = 0;
-//
-//  	currentLed13 = 0;
-//  	currentLed24 = 0;
-//  	clear7SEG();
-//  }
+
+  	led_buffer[0] = 0;
+  	led_buffer[1] = 0;
+  	led_buffer[2] = 0;
+  	led_buffer[3] = 0;
+
+  	currentLed13 = 0;
+  	currentLed24 = 0;
+  	//clear7SEG();
+  }
 
   void onRed1() {
 	HAL_GPIO_WritePin(GPIOA, D2_Pin, SET);
