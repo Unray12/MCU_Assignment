@@ -97,6 +97,12 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
+	  onAmber1();
+	  if (isButtonPressed(0) || isButtonPressed(1) || isButtonPressed(2) || isButtonPressed(3)) {
+		  onGreen2();
+		  HAL_Delay(1000);
+		  clearled();
+	  }
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

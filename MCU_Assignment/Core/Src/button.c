@@ -44,7 +44,8 @@ void getKeyInput(int index) {
 	keyReg0[index] = keyReg1[index];
 	keyReg1[index] = keyReg2[index];
 
-	keyReg2[index] = HAL_GPIO_ReadPin(button_pin[index].GPIOtype, button_pin[index].buttonPin);
+//	keyReg2[index] = HAL_GPIO_ReadPin(button_pin[index].GPIOtype, button_pin[index].buttonPin);
+	keyReg2[index] = HAL_GPIO_ReadPin(A2_GPIO_Port,A2_Pin);
 	if ((keyReg0[index] == keyReg1[index]) && (keyReg1[index] == keyReg2[index])) {
 		if (keyReg3[index] != keyReg2[index]) {
 			keyReg3[index] = keyReg2[index];
