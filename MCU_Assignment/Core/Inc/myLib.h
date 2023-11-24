@@ -39,5 +39,5 @@ void onRedPedes();
 void onGreenPedes();
 void onAmberPedes();
 
-
+void clearled();
 #endif /* INC_MYLIB_H_ */

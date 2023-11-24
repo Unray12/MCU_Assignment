@@ -172,44 +172,53 @@ int realRedTime = 5;
   }
 
   void onRed1() {
-	HAL_GPIO_WritePin(GPIOA, D2_Pin, SET);
-	HAL_GPIO_WritePin(GPIOA, D3_Pin, SET);
+	HAL_GPIO_WritePin(D2_GPIO_Port, D2_Pin, SET);
+	HAL_GPIO_WritePin(D3_GPIO_Port, D3_Pin, SET);
   }
 
   void onAmber1() {
-	HAL_GPIO_WritePin(GPIOA, D2_Pin, SET);
-	HAL_GPIO_WritePin(GPIOA, D3_Pin, RESET);
+	HAL_GPIO_WritePin(D2_GPIO_Port, D2_Pin, SET);
+	HAL_GPIO_WritePin(D3_GPIO_Port, D3_Pin, RESET);
   }
 
   void onGreen1() {
-	HAL_GPIO_WritePin(GPIOA, D2_Pin, RESET);
-	HAL_GPIO_WritePin(GPIOA, D3_Pin, SET);
+	HAL_GPIO_WritePin(D2_GPIO_Port, D2_Pin, RESET);
+	HAL_GPIO_WritePin(D3_GPIO_Port, D3_Pin, SET);
   }
 
   void onRed2() {
-	HAL_GPIO_WritePin(GPIOA, D4_Pin, SET);
-	HAL_GPIO_WritePin(GPIOA, D5_Pin, SET);
+	HAL_GPIO_WritePin(D4_GPIO_Port, D4_Pin, SET);
+	HAL_GPIO_WritePin(D5_GPIO_Port, D5_Pin, SET);
   }
 
   void onAmber2() {
-	HAL_GPIO_WritePin(GPIOA, D4_Pin, SET);
-	HAL_GPIO_WritePin(GPIOA, D5_Pin, RESET);
+	HAL_GPIO_WritePin(D4_GPIO_Port, D4_Pin, SET);
+	HAL_GPIO_WritePin(D5_GPIO_Port, D5_Pin, RESET);
   }
 
   void onGreen2() {
-	HAL_GPIO_WritePin(GPIOA, D4_Pin, RESET);
-	HAL_GPIO_WritePin(GPIOA, D5_Pin, SET);
+	HAL_GPIO_WritePin(D4_GPIO_Port, D4_Pin, RESET);
+	HAL_GPIO_WritePin(D5_GPIO_Port, D5_Pin, SET);
   }
 
   void onRedPedes() {
-	HAL_GPIO_WritePin(GPIOA, D6_Pin, SET);
-	HAL_GPIO_WritePin(GPIOA, D7_Pin, SET);
+	HAL_GPIO_WritePin(D6_GPIO_Port, D6_Pin, SET);
+	HAL_GPIO_WritePin(D7_GPIO_Port, D7_Pin, SET);
   }
   void onGreenPedes() {
-	HAL_GPIO_WritePin(GPIOA, D6_Pin, RESET);
-	HAL_GPIO_WritePin(GPIOA, D7_Pin, SET);
+	HAL_GPIO_WritePin(D6_GPIO_Port, D6_Pin, RESET);
+	HAL_GPIO_WritePin(D7_GPIO_Port, D7_Pin, SET);
   }
   void onAmberPedes() {
-	HAL_GPIO_WritePin(GPIOA, D6_Pin, SET);
-	HAL_GPIO_WritePin(GPIOA, D7_Pin, RESET);
+	HAL_GPIO_WritePin(D6_GPIO_Port, D6_Pin, SET);
+	HAL_GPIO_WritePin(D7_GPIO_Port, D7_Pin, RESET);
+  }
+
+
+  void clearled() {
+    HAL_GPIO_WritePin(D2_GPIO_Port, D2_Pin, RESET);
+    HAL_GPIO_WritePin(D3_GPIO_Port, D3_Pin, RESET);
+
+    HAL_GPIO_WritePin(D6_GPIO_Port, D6_Pin, RESET);
+	HAL_GPIO_WritePin(D7_GPIO_Port, D7_Pin, RESET);
   }

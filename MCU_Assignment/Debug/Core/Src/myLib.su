@@ -8,3 +8,4 @@ myLib.c:199:8:onGreen2	8	static
 myLib.c:204:8:onRedPedes	8	static
 myLib.c:208:8:onGreenPedes	8	static
 myLib.c:212:8:onAmberPedes	8	static
+myLib.c:218:8:clearled	8	static
