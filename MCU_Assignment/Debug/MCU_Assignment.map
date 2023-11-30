@@ -179,7 +179,7 @@ Discarded input sections
  .data          0x0000000000000000        0x0 ./Core/Src/fsm_tuning.o
  .bss           0x0000000000000000        0x0 ./Core/Src/fsm_tuning.o
  .text.fsm_tuning_run
-                0x0000000000000000      0x208 ./Core/Src/fsm_tuning.o
+                0x0000000000000000      0x204 ./Core/Src/fsm_tuning.o
  .debug_info    0x0000000000000000      0x2cc ./Core/Src/fsm_tuning.o
  .debug_abbrev  0x0000000000000000       0xf6 ./Core/Src/fsm_tuning.o
  .debug_aranges
@@ -455,14 +455,14 @@ Discarded input sections
                 0x0000000000000000        0x4 ./Core/Src/myLib.o
  .text.clearTrafficLight
                 0x0000000000000000       0x3c ./Core/Src/myLib.o
- .text.onRed1   0x0000000000000000       0x24 ./Core/Src/myLib.o
  .text.onAmber1
                 0x0000000000000000       0x24 ./Core/Src/myLib.o
+ .text.onRed1   0x0000000000000000       0x24 ./Core/Src/myLib.o
  .text.onGreen1
                 0x0000000000000000       0x24 ./Core/Src/myLib.o
- .text.onRed2   0x0000000000000000       0x20 ./Core/Src/myLib.o
  .text.onAmber2
                 0x0000000000000000       0x20 ./Core/Src/myLib.o
+ .text.onRed2   0x0000000000000000       0x20 ./Core/Src/myLib.o
  .text.onGreen2
                 0x0000000000000000       0x20 ./Core/Src/myLib.o
  .text.onRedPedes

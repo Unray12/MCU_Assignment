@@ -171,12 +171,12 @@ int realRedTime = 5;
 //  	clear7SEG();
   }
 
-  void onRed1() {
+  void onAmber1() {
 	HAL_GPIO_WritePin(GPIOA, D2_Pin, SET);
 	HAL_GPIO_WritePin(GPIOA, D3_Pin, SET);
   }
 
-  void onAmber1() {
+  void onRed1() {
 	HAL_GPIO_WritePin(GPIOA, D2_Pin, SET);
 	HAL_GPIO_WritePin(GPIOA, D3_Pin, RESET);
   }
@@ -186,12 +186,12 @@ int realRedTime = 5;
 	HAL_GPIO_WritePin(GPIOA, D3_Pin, SET);
   }
 
-  void onRed2() {
+  void onAmber2() {
 	HAL_GPIO_WritePin(GPIOA, D4_Pin, SET);
 	HAL_GPIO_WritePin(GPIOA, D5_Pin, SET);
   }
 
-  void onAmber2() {
+  void onRed2() {
 	HAL_GPIO_WritePin(GPIOA, D4_Pin, SET);
 	HAL_GPIO_WritePin(GPIOA, D5_Pin, RESET);
   }
