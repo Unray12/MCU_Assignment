@@ -213,3 +213,12 @@ int realRedTime = 5;
 	HAL_GPIO_WritePin(D6_GPIO_Port, D6_Pin, SET);
 	HAL_GPIO_WritePin(D7_GPIO_Port, D7_Pin, RESET);
   }
+
+
+  void clearled() {
+    HAL_GPIO_WritePin(D2_GPIO_Port, D2_Pin, RESET);
+    HAL_GPIO_WritePin(D3_GPIO_Port, D3_Pin, RESET);
+
+    HAL_GPIO_WritePin(D6_GPIO_Port, D6_Pin, RESET);
+	HAL_GPIO_WritePin(D7_GPIO_Port, D7_Pin, RESET);
+  }
