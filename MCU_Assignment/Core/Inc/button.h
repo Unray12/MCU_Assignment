@@ -21,10 +21,10 @@
 
 extern uint16_t buttonPin[MAX_BUTTON];
 extern int button_flag[MAX_BUTTON];
-extern int timerForKeyPress;
+extern int timerForKeyPress[MAX_BUTTON];
 
 void subKeyProcess(int index);
-void getKeyInput();
+void getKeyInput(int index);
 int isButtonPressed(int index);
 
 

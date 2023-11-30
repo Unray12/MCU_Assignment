@@ -42,7 +42,7 @@ void countDown() {
 			currentLed13 = led13;
 		if (currentLed24 < 0)
 			currentLed24 = led24;
-		updateLedBuffer();
+		//updateLedBuffer();
 		setTimer(1, 100);
 	}
 }
@@ -64,7 +64,7 @@ void fsm_automatic_run() {
 			status = TUNING_RED;
 			clearTrafficLight();
 			currentLed24 = 2; //mode
-			updateLedBuffer();
+			//updateLedBuffer();
 //			setTimer(2, 10); //update leds
 
 		}

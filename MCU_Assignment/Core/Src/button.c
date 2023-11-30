@@ -24,7 +24,7 @@ int keyReg1[MAX_BUTTON] = {NORMAL_STATE};
 int keyReg2[MAX_BUTTON] = {NORMAL_STATE};
 
 int keyReg3[MAX_BUTTON] = {NORMAL_STATE};
-int timerForKeyPress = 200;
+int timerForKeyPress[MAX_BUTTON] = {200};
 int button_flag[MAX_BUTTON] = {0};
 
 int isButtonPressed(int index) {
@@ -45,17 +45,18 @@ void getKeyInput(int index) {
 	keyReg1[index] = keyReg2[index];
 
 	keyReg2[index] = HAL_GPIO_ReadPin(button_pin[index].GPIOtype, button_pin[index].buttonPin);
+	//keyReg2[index] = HAL_GPIO_ReadPin(A2_GPIO_Port,A2_Pin);
 	if ((keyReg0[index] == keyReg1[index]) && (keyReg1[index] == keyReg2[index])) {
 		if (keyReg3[index] != keyReg2[index]) {
 			keyReg3[index] = keyReg2[index];
 			if (keyReg2[index] == PRESSED_STATE) {
 				subKeyProcess(index);
-				timerForKeyPress = 200;
+				timerForKeyPress[index] = 200;
 			}
 		}
 		else {
-			timerForKeyPress--;
-			if (timerForKeyPress == 0) {
+			timerForKeyPress[index]--;
+			if (timerForKeyPress[index] == 0) {
 				keyReg3[index] = NORMAL_STATE;
 			}
 		}

@@ -19,7 +19,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-
+#include "fsm_automatic.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -96,6 +96,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  onAmber1();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -233,8 +234,12 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-void HAL_TIM_PeriodElapsedCallBack(TIM_HandleTypeDef *htim) {
-	//timer_run();
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
+	timer_run();
+	getKeyInput(0);
+	getKeyInput(1);
+	getKeyInput(2);
+	getKeyInput(3);
 }
 /* USER CODE END 4 */
 
