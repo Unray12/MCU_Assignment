@@ -7,4 +7,5 @@
 
 #include "global.h"
 int status = 1;
-
+int status_pedestrian=1;
+int buzzer_flag=0;

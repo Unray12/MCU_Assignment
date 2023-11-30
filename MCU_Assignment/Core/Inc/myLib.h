@@ -19,6 +19,8 @@ extern int currentLed24;
 extern int realAmberTime; //real time in second
 extern int realGreenTime;
 extern int realRedTime;
+extern int led13;
+extern int led24;
 
 void update7SEGLed(int index);
 void updateLedBuffer();
@@ -41,4 +43,6 @@ void onAmberPedes();
 
 void clearled();
 
+void buzzer_on();
+void buzzer_off();
 #endif /* INC_MYLIB_H_ */

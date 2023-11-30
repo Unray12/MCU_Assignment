@@ -68,6 +68,10 @@ void fsm_automatic_run() {
 //			setTimer(2, 10); //update leds
 
 		}
+		if (isButtonPressed(3)) { // pedestrian nho' check cac state khac khi bam nut
+			buzzer_flag=1;
+			status_pedestrian=PEDESTRIAN;
+		}
 		if (timerFlag[0] == 1){
 			status = AUTO_RED_AMBER;
 

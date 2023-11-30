@@ -20,7 +20,7 @@
 #define AUTO_GREEN_RED 4
 #define AUTO_AMBER_RED 5
 
-
+#define PEDESTRIAN		10
 #define PEDESTRIAN_RED 11
 #define PEDESTRIAN_AMBER 12
 #define PEDESTRIAN_GREEN 13
@@ -35,6 +35,8 @@
 #define MANUAL_AMBER_RED 29
 
 extern int status;
+extern int status_pedestrian;
+extern int buzzer_flag;
 
 
 #endif /* INC_GLOBAL_H_ */
