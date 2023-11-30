@@ -24,7 +24,7 @@ extern int button_flag[MAX_BUTTON];
 extern int timerForKeyPress;
 
 void subKeyProcess(int index);
-void getKeyInput();
+void getKeyInput(int index);
 int isButtonPressed(int index);
 
 
