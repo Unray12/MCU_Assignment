@@ -41,4 +41,7 @@ void onAmberPedes();
 
 void clearled();
 
+void buzzer_on();
+void buzzer_off();
+
 #endif /* INC_MYLIB_H_ */

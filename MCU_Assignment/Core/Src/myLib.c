@@ -7,7 +7,7 @@
 
 
 #include "myLib.h"
-
+#include "software_timer.h"
 int index7SEGLed = 0;
 int led_buffer[4] = {0, 0, 0, 0};
 
@@ -222,3 +222,29 @@ int realRedTime = 5;
     HAL_GPIO_WritePin(D6_GPIO_Port, D6_Pin, RESET);
 	HAL_GPIO_WritePin(D7_GPIO_Port, D7_Pin, RESET);
   }
+
+  int a=0;
+  TIM_HandleTypeDef htim3;
+    void buzzer_on() {
+  	  if (buzzer_flag==1) {
+  		  if (currentLed24>2) {
+  			  currentLed24=2;
+  			  setTimer(3, 200);
+  			  time_buzzer=200;
+  		  } else {
+  			  setTimer(3, led24-currentLed24);
+  			  time_buzzer=led24-currentLed24;
+  		  }
+  		  buzzer_flag=0;
+  	  }
+  	  __HAL_TIM_SetCompare (&htim3,TIM_CHANNEL_1,a);
+  	  if (timerFlag[6]==1) {
+  		  a+=25;
+  		  setTimer(6, time_buzzer/4);
+  	  }
+    }
+
+    void buzzer_off() {
+  	  __HAL_TIM_SetCompare (&htim3,TIM_CHANNEL_1,0);
+      }
+
