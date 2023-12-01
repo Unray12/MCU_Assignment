@@ -226,23 +226,24 @@ int realRedTime = 5;
   int time_buzzer;
   TIM_HandleTypeDef htim3;
   int duty=0;
+
   void buzzer_on() {
-	  if (buzzer_flag==1) {
-		  if (currentLed24>2) {
-			  currentLed24=2;
-			  setTimer(3, 200);
-			  time_buzzer=200;
-		  } else {
-			  setTimer(3, led24-currentLed24);
-			  time_buzzer=led24-currentLed24;
-		  }
-		  buzzer_flag=0;
-		  duty=0;
-	  }
+//	  if (buzzer_flag==1) {
+//		  if (currentLed24>2) {
+//			  currentLed24=2;
+//			  setTimer(3, 200);
+//			  time_buzzer=200;
+//		  } else {
+//			  setTimer(3, led24-currentLed24);
+//			  time_buzzer=led24-currentLed24;
+//		  }
+//		  buzzer_flag=0;
+//		  duty=0;
+//	  }
 	  __HAL_TIM_SetCompare (&htim3,TIM_CHANNEL_1,duty);
 	  if (timerFlag[6]==1) {
-		  duty+=10;
-		  setTimer(6, time_buzzer/4);
+		  duty+=25;
+		  setTimer(6, 200/4);
 	  }
   }
 
