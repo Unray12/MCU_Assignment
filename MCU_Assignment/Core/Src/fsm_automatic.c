@@ -61,12 +61,11 @@ void fsm_automatic_run() {
 	case AUTO_RED_GREEN:
 		redGreenLed();
 		if (isButtonPressed(0) == 1) {
-			status = TUNING_RED;
+			status = MANUAL_RED_GREEN;
 			clearTrafficLight();
 			currentLed24 = 2; //mode
 			//updateLedBuffer();
 //			setTimer(2, 10); //update leds
-
 		}
 		button_flag[3]=0;
 		if (isButtonPressed(3)) { // pedestrian nho' check cac state khac khi bam nut
@@ -86,6 +85,14 @@ void fsm_automatic_run() {
 	case AUTO_RED_AMBER:
 		redAmberLed();
 
+		if (isButtonPressed(0) == 1) {
+			status = MANUAL_RED_AMBER;
+			clearTrafficLight();
+			//currentLed24 = 2; //mode
+			//updateLedBuffer();
+//			setTimer(2, 10); //update leds
+		}
+
 		if (timerFlag[0] == 1) {
 			status = AUTO_GREEN_RED;
 
@@ -100,6 +107,14 @@ void fsm_automatic_run() {
 	case AUTO_GREEN_RED:
 		greenRedLed();
 
+		if (isButtonPressed(0) == 1) {
+			status = MANUAL_GREEN_RED;
+			clearTrafficLight();
+			//currentLed24 = 2; //mode
+			//updateLedBuffer();
+//			setTimer(2, 10); //update leds
+		}
+
 		if (timerFlag[0] == 1) {
 			status = AUTO_AMBER_RED;
 
@@ -113,6 +128,15 @@ void fsm_automatic_run() {
 		break;
 	case AUTO_AMBER_RED:
 		amberRedLed();
+
+		if (isButtonPressed(0) == 1) {
+			status = MANUAL_AMBER_RED;
+			clearTrafficLight();
+			//currentLed24 = 2; //mode
+			//updateLedBuffer();
+//			setTimer(2, 10); //update leds
+		}
+
 		if (timerFlag[0] == 1) {
 			status = AUTO_RED_GREEN;
 
