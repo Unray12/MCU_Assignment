@@ -12,8 +12,8 @@
 
 #define GPIO_PIN_(i) ((uint16_t)(1 << (i)))
 
-//extern int index7SEGLed;
-//extern int led_buffer[4];
+extern int index7SEGLed;
+extern int led_buffer[4];
 extern int currentLed13;
 extern int currentLed24;
 extern int realAmberTime; //real time in second
