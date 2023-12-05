@@ -20,6 +20,11 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "global.h"
+#include "fsm_automatic.h"
+#include "fsm_manual.h"
+#include "fsm_pedestrian.h"
+#include "fsm_tuning.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -114,8 +119,10 @@ int main(void)
   setTimer(6, 200/4);
     while (1)
     {
-    fsm_automatic_run();
-    fsm_pedestrian();
+    	fsm_automatic_run();
+    	fsm_tuning_run();
+    	manual_fsm_run();
+    	fsm_pedestrian();
     }
 
   /* USER CODE END 3 */
