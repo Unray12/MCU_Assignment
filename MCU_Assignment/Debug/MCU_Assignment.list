@@ -455,7 +455,6 @@ void fsm_automatic_run() {
  80003d6:	601a      	str	r2, [r3, #0]
 			//updateLedBuffer();
 //			setTimer(2, 10); //update leds
-
 		}
 		if (isButtonPressed(3)) { // pedestrian nho' check cac state khac khi bam nut
  80003d8:	2003      	movs	r0, #3
@@ -511,6 +510,23 @@ void fsm_automatic_run() {
 	case AUTO_RED_AMBER:
 		redAmberLed();
  8000428:	f7ff ff42 	bl	80002b0 <redAmberLed>
+
+		if (isButtonPressed(0) == 1) {
+ 8000432:	2000      	movs	r0, #0
+ 8000434:	f7ff fe8a 	bl	800014c <isButtonPressed>
+ 8000438:	4603      	mov	r3, r0
+ 800043a:	2b01      	cmp	r3, #1
+ 800043c:	d104      	bne.n	8000448 <fsm_automatic_run+0x108>
+			status = MANUAL_RED_AMBER;
+ 800043e:	4b43      	ldr	r3, [pc, #268]	; (800054c <fsm_automatic_run+0x20c>)
+ 8000440:	221b      	movs	r2, #27
+ 8000442:	601a      	str	r2, [r3, #0]
+			clearTrafficLight();
+ 8000444:	f000 fc68 	bl	8000d18 <clearTrafficLight>
+			//currentLed24 = 2; //mode
+			//updateLedBuffer();
+//			setTimer(2, 10); //update leds
+		}
 
 		if (timerFlag[0] == 1) {
  800042c:	4b3b      	ldr	r3, [pc, #236]	; (800051c <fsm_automatic_run+0x1dc>)
@@ -1747,9 +1763,19 @@ __STATIC_FORCEINLINE void __disable_irq(void)
 
 08000ba4 <buzzer_on>:
 
-  int time_buzzer;
-  TIM_HandleTypeDef htim3;
-  int duty=0;
+  void clearled() {
+ 8000e2c:	b580      	push	{r7, lr}
+ 8000e2e:	af00      	add	r7, sp, #0
+    HAL_GPIO_WritePin(D2_GPIO_Port, D2_Pin, RESET);
+ 8000e30:	2200      	movs	r2, #0
+ 8000e32:	f44f 6180 	mov.w	r1, #1024	; 0x400
+ 8000e36:	480a      	ldr	r0, [pc, #40]	; (8000e60 <clearled+0x34>)
+ 8000e38:	f000 fc83 	bl	8001742 <HAL_GPIO_WritePin>
+    HAL_GPIO_WritePin(D3_GPIO_Port, D3_Pin, RESET);
+ 8000e3c:	2200      	movs	r2, #0
+ 8000e3e:	2108      	movs	r1, #8
+ 8000e40:	4808      	ldr	r0, [pc, #32]	; (8000e64 <clearled+0x38>)
+ 8000e42:	f000 fc7e 	bl	8001742 <HAL_GPIO_WritePin>
 
   void buzzer_on() {
  8000ba4:	b580      	push	{r7, lr}
