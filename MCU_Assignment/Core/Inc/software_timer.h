@@ -23,7 +23,7 @@ extern uint8_t timerFlag[MAX_TIMER];
  * timer6:
  * timer7:
  * timer8:
- * timer9:
+ * timer9: uart
  */
 void setTimer(uint8_t index, uint16_t duration);
 void timerRun(uint8_t index);

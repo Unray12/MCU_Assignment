@@ -76,13 +76,13 @@ Disassembly of section .text:
  8000144:	20000094 	.word	0x20000094
  8000148:	08002c88 	.word	0x08002c88
 
-0800014c <isButtonPressed>:
+0800014c <subKeyProcess>:
+		return 1;
+	}
+	return 0;
+}
 
-int keyReg3[MAX_BUTTON] = {NORMAL_STATE};
-int timerForKeyPress[MAX_BUTTON] = {200};
-int button_flag[MAX_BUTTON] = {0};
-
-int isButtonPressed(int index) {
+void subKeyProcess(int index) {
  800014c:	b480      	push	{r7}
  800014e:	b083      	sub	sp, #12
  8000150:	af00      	add	r7, sp, #0
@@ -121,10 +121,10 @@ void subKeyProcess(int index) {
  8000184:	af00      	add	r7, sp, #0
  8000186:	6078      	str	r0, [r7, #4]
 	button_flag[index] = 1;
- 8000188:	4a04      	ldr	r2, [pc, #16]	; (800019c <subKeyProcess+0x1c>)
- 800018a:	687b      	ldr	r3, [r7, #4]
- 800018c:	2101      	movs	r1, #1
- 800018e:	f842 1023 	str.w	r1, [r2, r3, lsl #2]
+ 8000154:	4a04      	ldr	r2, [pc, #16]	; (8000168 <subKeyProcess+0x1c>)
+ 8000156:	687b      	ldr	r3, [r7, #4]
+ 8000158:	2101      	movs	r1, #1
+ 800015a:	f842 1023 	str.w	r1, [r2, r3, lsl #2]
 }
  8000192:	bf00      	nop
  8000194:	370c      	adds	r7, #12
@@ -133,28 +133,28 @@ void subKeyProcess(int index) {
  800019a:	4770      	bx	lr
  800019c:	200000ac 	.word	0x200000ac
 
-080001a0 <getKeyInput>:
+0800016c <getKeyInput>:
 
 
 void getKeyInput(int index) {
- 80001a0:	b580      	push	{r7, lr}
- 80001a2:	b082      	sub	sp, #8
- 80001a4:	af00      	add	r7, sp, #0
- 80001a6:	6078      	str	r0, [r7, #4]
+ 800016c:	b580      	push	{r7, lr}
+ 800016e:	b082      	sub	sp, #8
+ 8000170:	af00      	add	r7, sp, #0
+ 8000172:	6078      	str	r0, [r7, #4]
 	keyReg0[index] = keyReg1[index];
- 80001a8:	4a37      	ldr	r2, [pc, #220]	; (8000288 <getKeyInput+0xe8>)
- 80001aa:	687b      	ldr	r3, [r7, #4]
- 80001ac:	f852 2023 	ldr.w	r2, [r2, r3, lsl #2]
- 80001b0:	4936      	ldr	r1, [pc, #216]	; (800028c <getKeyInput+0xec>)
- 80001b2:	687b      	ldr	r3, [r7, #4]
- 80001b4:	f841 2023 	str.w	r2, [r1, r3, lsl #2]
+ 8000174:	4a37      	ldr	r2, [pc, #220]	; (8000254 <getKeyInput+0xe8>)
+ 8000176:	687b      	ldr	r3, [r7, #4]
+ 8000178:	f852 2023 	ldr.w	r2, [r2, r3, lsl #2]
+ 800017c:	4936      	ldr	r1, [pc, #216]	; (8000258 <getKeyInput+0xec>)
+ 800017e:	687b      	ldr	r3, [r7, #4]
+ 8000180:	f841 2023 	str.w	r2, [r1, r3, lsl #2]
 	keyReg1[index] = keyReg2[index];
- 80001b8:	4a35      	ldr	r2, [pc, #212]	; (8000290 <getKeyInput+0xf0>)
- 80001ba:	687b      	ldr	r3, [r7, #4]
- 80001bc:	f852 2023 	ldr.w	r2, [r2, r3, lsl #2]
- 80001c0:	4931      	ldr	r1, [pc, #196]	; (8000288 <getKeyInput+0xe8>)
- 80001c2:	687b      	ldr	r3, [r7, #4]
- 80001c4:	f841 2023 	str.w	r2, [r1, r3, lsl #2]
+ 8000184:	4a35      	ldr	r2, [pc, #212]	; (800025c <getKeyInput+0xf0>)
+ 8000186:	687b      	ldr	r3, [r7, #4]
+ 8000188:	f852 2023 	ldr.w	r2, [r2, r3, lsl #2]
+ 800018c:	4931      	ldr	r1, [pc, #196]	; (8000254 <getKeyInput+0xe8>)
+ 800018e:	687b      	ldr	r3, [r7, #4]
+ 8000190:	f841 2023 	str.w	r2, [r1, r3, lsl #2]
 
 	keyReg2[index] = HAL_GPIO_ReadPin(button_pin[index].GPIOtype, button_pin[index].buttonPin);
  80001c8:	4a32      	ldr	r2, [pc, #200]	; (8000294 <getKeyInput+0xf4>)
@@ -175,95 +175,93 @@ void getKeyInput(int index) {
  80001ea:	f842 1023 	str.w	r1, [r2, r3, lsl #2]
 	//keyReg2[index] = HAL_GPIO_ReadPin(A2_GPIO_Port,A2_Pin);
 	if ((keyReg0[index] == keyReg1[index]) && (keyReg1[index] == keyReg2[index])) {
- 80001ee:	4a27      	ldr	r2, [pc, #156]	; (800028c <getKeyInput+0xec>)
- 80001f0:	687b      	ldr	r3, [r7, #4]
- 80001f2:	f852 2023 	ldr.w	r2, [r2, r3, lsl #2]
- 80001f6:	4924      	ldr	r1, [pc, #144]	; (8000288 <getKeyInput+0xe8>)
- 80001f8:	687b      	ldr	r3, [r7, #4]
- 80001fa:	f851 3023 	ldr.w	r3, [r1, r3, lsl #2]
- 80001fe:	429a      	cmp	r2, r3
- 8000200:	d13e      	bne.n	8000280 <getKeyInput+0xe0>
- 8000202:	4a21      	ldr	r2, [pc, #132]	; (8000288 <getKeyInput+0xe8>)
- 8000204:	687b      	ldr	r3, [r7, #4]
- 8000206:	f852 2023 	ldr.w	r2, [r2, r3, lsl #2]
- 800020a:	4921      	ldr	r1, [pc, #132]	; (8000290 <getKeyInput+0xf0>)
- 800020c:	687b      	ldr	r3, [r7, #4]
- 800020e:	f851 3023 	ldr.w	r3, [r1, r3, lsl #2]
- 8000212:	429a      	cmp	r2, r3
- 8000214:	d134      	bne.n	8000280 <getKeyInput+0xe0>
+ 80001ba:	4a27      	ldr	r2, [pc, #156]	; (8000258 <getKeyInput+0xec>)
+ 80001bc:	687b      	ldr	r3, [r7, #4]
+ 80001be:	f852 2023 	ldr.w	r2, [r2, r3, lsl #2]
+ 80001c2:	4924      	ldr	r1, [pc, #144]	; (8000254 <getKeyInput+0xe8>)
+ 80001c4:	687b      	ldr	r3, [r7, #4]
+ 80001c6:	f851 3023 	ldr.w	r3, [r1, r3, lsl #2]
+ 80001ca:	429a      	cmp	r2, r3
+ 80001cc:	d13e      	bne.n	800024c <getKeyInput+0xe0>
+ 80001ce:	4a21      	ldr	r2, [pc, #132]	; (8000254 <getKeyInput+0xe8>)
+ 80001d0:	687b      	ldr	r3, [r7, #4]
+ 80001d2:	f852 2023 	ldr.w	r2, [r2, r3, lsl #2]
+ 80001d6:	4921      	ldr	r1, [pc, #132]	; (800025c <getKeyInput+0xf0>)
+ 80001d8:	687b      	ldr	r3, [r7, #4]
+ 80001da:	f851 3023 	ldr.w	r3, [r1, r3, lsl #2]
+ 80001de:	429a      	cmp	r2, r3
+ 80001e0:	d134      	bne.n	800024c <getKeyInput+0xe0>
 		if (keyReg3[index] != keyReg2[index]) {
- 8000216:	4a20      	ldr	r2, [pc, #128]	; (8000298 <getKeyInput+0xf8>)
- 8000218:	687b      	ldr	r3, [r7, #4]
- 800021a:	f852 2023 	ldr.w	r2, [r2, r3, lsl #2]
- 800021e:	491c      	ldr	r1, [pc, #112]	; (8000290 <getKeyInput+0xf0>)
- 8000220:	687b      	ldr	r3, [r7, #4]
- 8000222:	f851 3023 	ldr.w	r3, [r1, r3, lsl #2]
- 8000226:	429a      	cmp	r2, r3
- 8000228:	d016      	beq.n	8000258 <getKeyInput+0xb8>
+ 80001e2:	4a20      	ldr	r2, [pc, #128]	; (8000264 <getKeyInput+0xf8>)
+ 80001e4:	687b      	ldr	r3, [r7, #4]
+ 80001e6:	f852 2023 	ldr.w	r2, [r2, r3, lsl #2]
+ 80001ea:	491c      	ldr	r1, [pc, #112]	; (800025c <getKeyInput+0xf0>)
+ 80001ec:	687b      	ldr	r3, [r7, #4]
+ 80001ee:	f851 3023 	ldr.w	r3, [r1, r3, lsl #2]
+ 80001f2:	429a      	cmp	r2, r3
+ 80001f4:	d016      	beq.n	8000224 <getKeyInput+0xb8>
 			keyReg3[index] = keyReg2[index];
- 800022a:	4a19      	ldr	r2, [pc, #100]	; (8000290 <getKeyInput+0xf0>)
- 800022c:	687b      	ldr	r3, [r7, #4]
- 800022e:	f852 2023 	ldr.w	r2, [r2, r3, lsl #2]
- 8000232:	4919      	ldr	r1, [pc, #100]	; (8000298 <getKeyInput+0xf8>)
- 8000234:	687b      	ldr	r3, [r7, #4]
- 8000236:	f841 2023 	str.w	r2, [r1, r3, lsl #2]
+ 80001f6:	4a19      	ldr	r2, [pc, #100]	; (800025c <getKeyInput+0xf0>)
+ 80001f8:	687b      	ldr	r3, [r7, #4]
+ 80001fa:	f852 2023 	ldr.w	r2, [r2, r3, lsl #2]
+ 80001fe:	4919      	ldr	r1, [pc, #100]	; (8000264 <getKeyInput+0xf8>)
+ 8000200:	687b      	ldr	r3, [r7, #4]
+ 8000202:	f841 2023 	str.w	r2, [r1, r3, lsl #2]
 			if (keyReg2[index] == PRESSED_STATE) {
- 800023a:	4a15      	ldr	r2, [pc, #84]	; (8000290 <getKeyInput+0xf0>)
- 800023c:	687b      	ldr	r3, [r7, #4]
- 800023e:	f852 3023 	ldr.w	r3, [r2, r3, lsl #2]
- 8000242:	2b00      	cmp	r3, #0
- 8000244:	d11c      	bne.n	8000280 <getKeyInput+0xe0>
+ 8000206:	4a15      	ldr	r2, [pc, #84]	; (800025c <getKeyInput+0xf0>)
+ 8000208:	687b      	ldr	r3, [r7, #4]
+ 800020a:	f852 3023 	ldr.w	r3, [r2, r3, lsl #2]
+ 800020e:	2b00      	cmp	r3, #0
+ 8000210:	d11c      	bne.n	800024c <getKeyInput+0xe0>
 				subKeyProcess(index);
- 8000246:	6878      	ldr	r0, [r7, #4]
- 8000248:	f7ff ff9a 	bl	8000180 <subKeyProcess>
+ 8000212:	6878      	ldr	r0, [r7, #4]
+ 8000214:	f7ff ff9a 	bl	800014c <subKeyProcess>
 				timerForKeyPress[index] = 200;
- 800024c:	4a13      	ldr	r2, [pc, #76]	; (800029c <getKeyInput+0xfc>)
- 800024e:	687b      	ldr	r3, [r7, #4]
- 8000250:	21c8      	movs	r1, #200	; 0xc8
- 8000252:	f842 1023 	str.w	r1, [r2, r3, lsl #2]
+ 8000218:	4a13      	ldr	r2, [pc, #76]	; (8000268 <getKeyInput+0xfc>)
+ 800021a:	687b      	ldr	r3, [r7, #4]
+ 800021c:	21c8      	movs	r1, #200	; 0xc8
+ 800021e:	f842 1023 	str.w	r1, [r2, r3, lsl #2]
 			if (timerForKeyPress[index] == 0) {
 				keyReg3[index] = NORMAL_STATE;
 			}
 		}
 	}
 }
- 8000256:	e013      	b.n	8000280 <getKeyInput+0xe0>
+ 8000222:	e013      	b.n	800024c <getKeyInput+0xe0>
 			timerForKeyPress[index]--;
- 8000258:	4a10      	ldr	r2, [pc, #64]	; (800029c <getKeyInput+0xfc>)
- 800025a:	687b      	ldr	r3, [r7, #4]
- 800025c:	f852 3023 	ldr.w	r3, [r2, r3, lsl #2]
- 8000260:	1e5a      	subs	r2, r3, #1
- 8000262:	490e      	ldr	r1, [pc, #56]	; (800029c <getKeyInput+0xfc>)
- 8000264:	687b      	ldr	r3, [r7, #4]
- 8000266:	f841 2023 	str.w	r2, [r1, r3, lsl #2]
+ 8000224:	4a10      	ldr	r2, [pc, #64]	; (8000268 <getKeyInput+0xfc>)
+ 8000226:	687b      	ldr	r3, [r7, #4]
+ 8000228:	f852 3023 	ldr.w	r3, [r2, r3, lsl #2]
+ 800022c:	1e5a      	subs	r2, r3, #1
+ 800022e:	490e      	ldr	r1, [pc, #56]	; (8000268 <getKeyInput+0xfc>)
+ 8000230:	687b      	ldr	r3, [r7, #4]
+ 8000232:	f841 2023 	str.w	r2, [r1, r3, lsl #2]
 			if (timerForKeyPress[index] == 0) {
- 800026a:	4a0c      	ldr	r2, [pc, #48]	; (800029c <getKeyInput+0xfc>)
- 800026c:	687b      	ldr	r3, [r7, #4]
- 800026e:	f852 3023 	ldr.w	r3, [r2, r3, lsl #2]
- 8000272:	2b00      	cmp	r3, #0
- 8000274:	d104      	bne.n	8000280 <getKeyInput+0xe0>
+ 8000236:	4a0c      	ldr	r2, [pc, #48]	; (8000268 <getKeyInput+0xfc>)
+ 8000238:	687b      	ldr	r3, [r7, #4]
+ 800023a:	f852 3023 	ldr.w	r3, [r2, r3, lsl #2]
+ 800023e:	2b00      	cmp	r3, #0
+ 8000240:	d104      	bne.n	800024c <getKeyInput+0xe0>
 				keyReg3[index] = NORMAL_STATE;
- 8000276:	4a08      	ldr	r2, [pc, #32]	; (8000298 <getKeyInput+0xf8>)
- 8000278:	687b      	ldr	r3, [r7, #4]
- 800027a:	2101      	movs	r1, #1
- 800027c:	f842 1023 	str.w	r1, [r2, r3, lsl #2]
+ 8000242:	4a08      	ldr	r2, [pc, #32]	; (8000264 <getKeyInput+0xf8>)
+ 8000244:	687b      	ldr	r3, [r7, #4]
+ 8000246:	2101      	movs	r1, #1
+ 8000248:	f842 1023 	str.w	r1, [r2, r3, lsl #2]
 }
- 8000280:	bf00      	nop
- 8000282:	3708      	adds	r7, #8
- 8000284:	46bd      	mov	sp, r7
- 8000286:	bd80      	pop	{r7, pc}
- 8000288:	20000030 	.word	0x20000030
- 800028c:	20000020 	.word	0x20000020
- 8000290:	20000040 	.word	0x20000040
- 8000294:	20000000 	.word	0x20000000
- 8000298:	20000050 	.word	0x20000050
- 800029c:	20000060 	.word	0x20000060
+ 800024c:	bf00      	nop
+ 800024e:	3708      	adds	r7, #8
+ 8000250:	46bd      	mov	sp, r7
+ 8000252:	bd80      	pop	{r7, pc}
+ 8000254:	20000030 	.word	0x20000030
+ 8000258:	20000020 	.word	0x20000020
+ 800025c:	20000040 	.word	0x20000040
+ 8000260:	20000000 	.word	0x20000000
+ 8000264:	20000050 	.word	0x20000050
+ 8000268:	20000060 	.word	0x20000060
 
-080002a0 <redGreenLed>:
-int	greenTime = 0;
+0800026c <HAL_UART_RxCpltCallback>:
 
-int led13 = 0; //initial time for that state
-int led24 = 0;
+/* USER CODE END PFP */
 
 void redGreenLed() {
  80002a0:	b580      	push	{r7, lr}
@@ -273,8 +271,17 @@ void redGreenLed() {
 	onGreen2();
  80002a8:	f000 fc1c 	bl	8000ae4 <onGreen2>
 }
- 80002ac:	bf00      	nop
- 80002ae:	bd80      	pop	{r7, pc}
+ 80002be:	bf00      	nop
+ 80002c0:	3708      	adds	r7, #8
+ 80002c2:	46bd      	mov	sp, r7
+ 80002c4:	bd80      	pop	{r7, pc}
+ 80002c6:	bf00      	nop
+ 80002c8:	40004400 	.word	0x40004400
+ 80002cc:	2000014c 	.word	0x2000014c
+ 80002d0:	200001ec 	.word	0x200001ec
+ 80002d4:	2000014d 	.word	0x2000014d
+ 80002d8:	20000254 	.word	0x20000254
+ 80002dc:	2000014e 	.word	0x2000014e
 
 080002b0 <redAmberLed>:
 
