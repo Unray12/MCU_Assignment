@@ -24,13 +24,13 @@ int realRedTime = 5;
 //	display7SEG(led_buffer[index]);
 //}
 //
-//void updateLedBuffer() {
-//	led_buffer[0] = currentLed13 / 10;
-//	led_buffer[2] = currentLed13 % 10;
-//
-//	led_buffer[1] = currentLed24 / 10;
-//	led_buffer[3] = currentLed24 % 10;
-//}
+void updateLedBuffer() {
+	led_buffer[0] = currentLed13 / 10;
+	led_buffer[2] = currentLed13 % 10;
+
+	led_buffer[1] = currentLed24 / 10;
+	led_buffer[3] = currentLed24 % 10;
+}
 
 //  void enState(uint8_t enIndex) {
 //	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_(0), SET);
@@ -219,8 +219,8 @@ int realRedTime = 5;
     HAL_GPIO_WritePin(D2_GPIO_Port, D2_Pin, RESET);
     HAL_GPIO_WritePin(D3_GPIO_Port, D3_Pin, RESET);
 
-    HAL_GPIO_WritePin(D6_GPIO_Port, D6_Pin, RESET);
-	HAL_GPIO_WritePin(D7_GPIO_Port, D7_Pin, RESET);
+    HAL_GPIO_WritePin(D4_GPIO_Port, D4_Pin, RESET);
+	HAL_GPIO_WritePin(D5_GPIO_Port, D5_Pin, RESET);
   }
 
   int time_buzzer;

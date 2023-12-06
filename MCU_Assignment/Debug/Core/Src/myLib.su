@@ -1,3 +1,4 @@
+myLib.c:27:6:updateLedBuffer	4	static
 myLib.c:156:8:clearTrafficLight	4	static
 myLib.c:174:8:onAmber1	8	static
 myLib.c:179:8:onRed1	8	static
