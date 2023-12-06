@@ -38,11 +38,11 @@ void countDown() {
 	if (timerFlag[1] == 1) { //for 7 seg leds buffer
 		currentLed13--;
 		currentLed24--;
-		if (currentLed13 < 0)
+		if (currentLed13 <= 0)
 			currentLed13 = led13;
-		if (currentLed24 < 0)
+		if (currentLed24 <= 0)
 			currentLed24 = led24;
-		//updateLedBuffer();
+		updateLedBuffer();
 		setTimer(1, 100);
 	}
 }

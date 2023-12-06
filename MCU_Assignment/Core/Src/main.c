@@ -119,8 +119,8 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
-  setTimer(1, 10);
-  setTimer(9, 100);
+  setTimer(1, 1);
+  setTimer(9, 1);
   while (1)
   {
   	fsm_automatic_run();
@@ -131,7 +131,7 @@ int main(void)
 		  command_parser_fsm();
 		  buffer_flag = 0;
 	  }
-	  HAL_UART_Transmit(&huart2, "1", 1, 50);
+//	  HAL_UART_Transmit(&huart2, "1", 1, 50);
 	  uart_communication_fsm();
     /* USER CODE END WHILE */
 

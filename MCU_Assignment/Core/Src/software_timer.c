@@ -29,6 +29,8 @@ void timer_run() {
 	timerRun(1);
 	timerRun(2);
 	timerRun(3);
+	timerRun(4);
 	timerRun(5);
 	timerRun(6);
+	timerRun(9);
 }

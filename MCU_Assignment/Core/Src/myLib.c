@@ -236,11 +236,11 @@ void updateLedBuffer() {
 		  if (buzzer_flag==1) {
 			  if (currentLed24>2) {
 				  currentLed24=2;
-				  setTimer(3, 200);
+				  setTimer(4, 200);
 				  time_buzzer=200;
 //				  onRedPedes();
 			  } else {
-				  setTimer(3, (currentLed24+1)*100);
+				  setTimer(4, (currentLed24+1)*100);
 				  time_buzzer=(currentLed24+1)*100;
 //				  onAmberPedes();
 			  }

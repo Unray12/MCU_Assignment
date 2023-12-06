@@ -37,6 +37,8 @@ void fsm_tuning_run() {
 
 			if (isButtonPressed(2) == 1) {
 				realRedTime = currentLed13;
+				currentLed13 = 0;
+
 			}
 			break;
 		case TUNING_AMBER:
@@ -79,6 +81,7 @@ void fsm_tuning_run() {
 
 			if (isButtonPressed(2) == 1) {
 				realAmberTime = currentLed13;
+				currentLed13 = 0;
 			}
 			break;
 		case TUNING_GREEN:
@@ -107,6 +110,7 @@ void fsm_tuning_run() {
 
 			if (isButtonPressed(2) == 1) {
 				realGreenTime = currentLed13;
+				currentLed13 = 0;
 			}
 			break;
 		default:

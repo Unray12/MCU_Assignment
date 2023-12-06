@@ -87,8 +87,8 @@ void uart_communication_fsm() {
 			else{
 					clear_buffer();
 					memset(command_data, 0, sizeof(command_data));
-					ADC_value = led_buffer[0] * 10 + led_buffer[1];
-					ADC_value2 = led_buffer[2] * 10 + led_buffer[3];
+					ADC_value = led_buffer[0] * 10 + led_buffer[2];
+					ADC_value2 = led_buffer[1] * 10 + led_buffer[3];
 					if(status == AUTO_AMBER_RED || status == AUTO_GREEN_RED || status == AUTO_RED_AMBER || status == AUTO_RED_GREEN)
 						HAL_UART_Transmit(&huart2, (void*)str, sprintf(str, "!AUTOMATIC: %d, %d# \r\n", ADC_value, ADC_value2), 1000);
 					else if(status == MANUAL_AMBER_RED || status == MANUAL_GREEN_RED || status == MANUAL_RED_AMBER || status == MANUAL_RED_GREEN)

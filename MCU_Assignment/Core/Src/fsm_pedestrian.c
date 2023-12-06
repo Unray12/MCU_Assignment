@@ -8,7 +8,7 @@
 #include "global.h"
 #include "software_timer.h"
 void fsm_pedestrian() {
-	if (timerFlag[3]==1) {
+	if (timerFlag[4]==1) {
 		buzzer_off();
 		status_pedestrian=PEDESTRIAN_GREEN;
 
@@ -19,17 +19,22 @@ void fsm_pedestrian() {
 		led13=realGreenTime;
 		led24=realAmberTime+realGreenTime;
 
+		currentLed13 = led13;
+		currentLed24 = led24;
+
+		updateLedBuffer();
+		timerFlag[9]=1;
 		setTimer(0,realGreenTime*100);
 		///////////////////////
 
 		setTimer(5, realGreenTime*100);
-		timerFlag[3]=0;
+		timerFlag[4]=0;
 	}
 	switch(status_pedestrian) {
 	case PEDESTRIAN:
 		buzzer_on();
 		if (status!=AUTO_RED_GREEN) {
-			timerFlag[3]=1;
+			timerFlag[4]=1;
 		}
 		break;
 	case PEDESTRIAN_GREEN:
