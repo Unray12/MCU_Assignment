@@ -5,9 +5,10 @@ myLib.c:184:8:onGreen1	8	static
 myLib.c:189:8:onAmber2	8	static
 myLib.c:194:8:onRed2	8	static
 myLib.c:199:8:onGreen2	8	static
-myLib.c:204:8:onRedPedes	8	static
+myLib.c:204:8:onAmberPedes	8	static
 myLib.c:208:8:onGreenPedes	8	static
-myLib.c:212:8:onAmberPedes	8	static
-myLib.c:218:8:clearled	8	static
-myLib.c:230:8:buzzer_on	8	static
-myLib.c:250:8:buzzer_off	4	static
+myLib.c:212:8:onRedPedes	8	static
+myLib.c:216:8:clearPedesLed	8	static
+myLib.c:222:8:clearled	8	static
+myLib.c:234:8:buzzer_on	8	static
+myLib.c:262:8:buzzer_off	4	static

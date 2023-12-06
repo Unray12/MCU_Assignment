@@ -201,7 +201,7 @@ int realRedTime = 5;
 	HAL_GPIO_WritePin(D5_GPIO_Port, D5_Pin, SET);
   }
 
-  void onRedPedes() {
+  void onAmberPedes() {
 	HAL_GPIO_WritePin(D6_GPIO_Port, D6_Pin, SET);
 	HAL_GPIO_WritePin(D7_GPIO_Port, D7_Pin, SET);
   }
@@ -209,8 +209,12 @@ int realRedTime = 5;
 	HAL_GPIO_WritePin(D6_GPIO_Port, D6_Pin, RESET);
 	HAL_GPIO_WritePin(D7_GPIO_Port, D7_Pin, SET);
   }
-  void onAmberPedes() {
+  void onRedPedes() {
 	HAL_GPIO_WritePin(D6_GPIO_Port, D6_Pin, SET);
+	HAL_GPIO_WritePin(D7_GPIO_Port, D7_Pin, RESET);
+  }
+  void clearPedesLed() {
+    HAL_GPIO_WritePin(D6_GPIO_Port, D6_Pin, RESET);
 	HAL_GPIO_WritePin(D7_GPIO_Port, D7_Pin, RESET);
   }
 
@@ -228,22 +232,30 @@ int realRedTime = 5;
   int duty=0;
 
   void buzzer_on() {
-//	  if (buzzer_flag==1) {
-//		  if (currentLed24>2) {
-//			  currentLed24=2;
-//			  setTimer(3, 200);
-//			  time_buzzer=200;
-//		  } else {
-//			  setTimer(3, led24-currentLed24);
-//			  time_buzzer=led24-currentLed24;
-//		  }
-//		  buzzer_flag=0;
-//		  duty=0;
-//	  }
-	  __HAL_TIM_SetCompare (&htim3,TIM_CHANNEL_1,duty);
-	  if (timerFlag[6]==1) {
-		  duty+=25;
-		  setTimer(6, 200/4);
+	  if (status==AUTO_RED_GREEN) {
+		  if (buzzer_flag==1) {
+			  if (currentLed24>2) {
+				  currentLed24=2;
+				  setTimer(3, 200);
+				  time_buzzer=200;
+//				  onRedPedes();
+			  } else {
+				  setTimer(3, (currentLed24+1)*100);
+				  time_buzzer=(currentLed24+1)*100;
+//				  onAmberPedes();
+			  }
+			  buzzer_flag=0;
+			  duty=0;
+			  timerFlag[6]=1;
+		  }
+		  if (duty>=100) {
+			  duty=0;
+		  }
+		  __HAL_TIM_SetCompare (&htim3,TIM_CHANNEL_1,duty);
+		  if (timerFlag[6]==1) {
+			  duty+=1;
+			  setTimer(6, time_buzzer/100);
+		  }
 	  }
   }
 

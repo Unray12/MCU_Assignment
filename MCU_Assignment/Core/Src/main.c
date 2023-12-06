@@ -19,7 +19,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "global.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -98,15 +98,13 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
-  status_pedestrian=PEDESTRIAN;
-  buzzer_flag=1;
-  setTimer(6, 200/4);
     while (1)
     {
-    fsm_automatic_run();
-    fsm_pedestrian();
+      /* USER CODE END WHILE */
+  	  fsm_automatic_run();
+  	  fsm_pedestrian();
+      /* USER CODE BEGIN 3 */
     }
-
   /* USER CODE END 3 */
 }
 

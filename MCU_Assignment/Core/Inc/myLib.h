@@ -40,6 +40,7 @@ void onAmber2();
 void onRedPedes();
 void onGreenPedes();
 void onAmberPedes();
+void clearPedesLed();
 
 void clearled();
 
