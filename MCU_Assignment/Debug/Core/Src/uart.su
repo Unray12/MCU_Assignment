@@ -1,5 +1,5 @@
-uart.c:26:6:clear_buffer	8	static
-uart.c:31:6:command_parser_fsm	16	static
-uart.c:57:5:isRSTreceived	4	static
-uart.c:63:5:isOKreceived	4	static
-uart.c:69:6:uart_communication_fsm	8	static
+uart.c:27:6:clear_buffer	8	static
+uart.c:32:6:command_parser_fsm	16	static
+uart.c:58:5:isRSTreceived	4	static
+uart.c:64:5:isOKreceived	4	static
+uart.c:70:6:uart_communication_fsm	8	static

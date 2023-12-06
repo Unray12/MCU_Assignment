@@ -10,11 +10,11 @@
 
 #include "main.h"
 #include "software_timer.h"
+#include "global.h"
 
 #define WAIT	1
 #define RECEIVE 2
 
-#define INIT	0
 #define RST_WAITING 1
 #define SENDING 2
 #define DEFAULT -1

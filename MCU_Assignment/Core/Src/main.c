@@ -21,7 +21,11 @@
 #include "main.h"
 #include "global.h"
 #include <stdio.h>
-#include <uart.h>
+#include "uart.h"
+#include "fsm_automatic.h"
+#include "fsm_manual.h"
+#include "fsm_pedestrian.h"
+#include "fsm_tuning.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -109,18 +113,25 @@ int main(void)
   /* USER CODE BEGIN 2 */
   MX_GPIO_Init();
   HAL_TIM_Base_Start_IT (&htim2) ;
-  //HAL_UART_Receive_IT(&huart2, &temp, 1);
+  HAL_UART_Receive_IT(&huart2, &temp, 1);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
+  setTimer(1, 10);
   setTimer(9, 100);
   while (1)
   {
+  	fsm_automatic_run();
+  	fsm_tuning_run();
+  	manual_fsm_run();
+  	fsm_pedestrian();
 	  if(buffer_flag == 1){
 		  command_parser_fsm();
 		  buffer_flag = 0;
 	  }
+	  HAL_UART_Transmit(&huart2, "1", 1, 50);
 	  uart_communication_fsm();
     /* USER CODE END WHILE */
 
