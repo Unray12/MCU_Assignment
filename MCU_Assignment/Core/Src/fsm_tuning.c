@@ -24,7 +24,9 @@ void fsm_tuning_run() {
 				if (currentLed13 > 99)
 					currentLed13 = 0;
 				updateLedBuffer();
+				uart_communication_fsm();
 			}
+
 
 			if(isButtonPressed(0) == 1) {
 				clearled();
@@ -33,6 +35,7 @@ void fsm_tuning_run() {
 				currentLed24 = 3; //mode
 				updateLedBuffer();
 				setTimer(3, 50);
+				uart_communication_fsm();
 			}
 
 			if (isButtonPressed(2) == 1) {
@@ -68,6 +71,7 @@ void fsm_tuning_run() {
 				if (currentLed13 > 99)
 					currentLed13 = 0;
 				updateLedBuffer();
+				uart_communication_fsm();
 			}
 
 			if(isButtonPressed(0) == 1) {
@@ -77,6 +81,7 @@ void fsm_tuning_run() {
 				currentLed24 = 4; //mode
 				updateLedBuffer();
 				setTimer(3, 50);
+				uart_communication_fsm();
 			}
 
 			if (isButtonPressed(2) == 1) {
@@ -97,6 +102,7 @@ void fsm_tuning_run() {
 				if (currentLed13 > 99)
 					currentLed13 = 0;
 				updateLedBuffer();
+				uart_communication_fsm();
 			}
 
 			if(isButtonPressed(0) == 1) {
@@ -106,6 +112,7 @@ void fsm_tuning_run() {
 				currentLed24 = 1; //mode
 				updateLedBuffer();
 				setTimer(0, realAmberTime * 100);
+				uart_communication_fsm();
 			}
 
 			if (isButtonPressed(2) == 1) {

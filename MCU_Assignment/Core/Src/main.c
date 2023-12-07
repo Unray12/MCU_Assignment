@@ -127,12 +127,12 @@ int main(void)
   	fsm_tuning_run();
   	manual_fsm_run();
   	fsm_pedestrian();
-	  if(buffer_flag == 1){
-		  command_parser_fsm();
-		  buffer_flag = 0;
-	  }
+//	  if(buffer_flag == 1){
+//		  command_parser_fsm();
+//		  buffer_flag = 0;
+//	  }
 //	  HAL_UART_Transmit(&huart2, "1", 1, 50);
-	  uart_communication_fsm();
+//	  uart_communication_fsm();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

@@ -66,6 +66,7 @@ void fsm_automatic_run() {
 			currentLed24 = 2; //mode
 			updateLedBuffer();
 			setTimer(2, 10); //update leds
+			uart_communication_fsm();
 		}
 		if (isButtonPressed(3)) { // pedestrian nho' check cac state khac khi bam nut
 			buzzer_flag=1;
@@ -90,6 +91,7 @@ void fsm_automatic_run() {
 			currentLed24 = 2; //mode
 			updateLedBuffer();
 			setTimer(2, 10); //update leds
+			uart_communication_fsm();
 		}
 
 		if (timerFlag[0] == 1) {
@@ -112,6 +114,7 @@ void fsm_automatic_run() {
 			currentLed24 = 2; //mode
 			updateLedBuffer();
 			setTimer(2, 10); //update leds
+			uart_communication_fsm();
 		}
 
 		if (timerFlag[0] == 1) {
@@ -134,6 +137,7 @@ void fsm_automatic_run() {
 			currentLed24 = 2; //mode
 			updateLedBuffer();
 			setTimer(2, 10); //update leds
+			uart_communication_fsm();
 		}
 
 		if (timerFlag[0] == 1) {

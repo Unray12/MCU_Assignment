@@ -16,10 +16,12 @@ void manual_fsm_run(){
 			status = TUNING_RED;
 			clearled();
 			setTimer(3, 50);
+			uart_communication_fsm();
 		}
 		if(isButtonPressed(1)){
 			status = MANUAL_AMBER_RED;
 			clearled();
+			uart_communication_fsm();
 		}
 
 		break;
@@ -30,10 +32,12 @@ void manual_fsm_run(){
 			status = TUNING_RED;
 			clearled();
 			setTimer(3, 50);
+			uart_communication_fsm();
 		}
 		if(isButtonPressed(1)){
 			status = MANUAL_RED_GREEN;
 			clearled();
+			uart_communication_fsm();
 		}
 		break;
 	case MANUAL_RED_GREEN:
@@ -43,10 +47,12 @@ void manual_fsm_run(){
 			status = TUNING_RED;
 			clearled();
 			setTimer(3, 50);
+			uart_communication_fsm();
 		}
 		if(isButtonPressed(1)){
 			status = MANUAL_RED_AMBER;
 			clearled();
+			uart_communication_fsm();
 		}
 		break;
 	case MANUAL_RED_AMBER:
@@ -56,10 +62,12 @@ void manual_fsm_run(){
 			status = TUNING_RED;
 			clearled();
 			setTimer(3, 50);
+			uart_communication_fsm();
 		}
 		if(isButtonPressed(1)){
 			status = MANUAL_GREEN_RED;
 			clearled();
+			uart_communication_fsm();
 		}
 		break;
 	default:
