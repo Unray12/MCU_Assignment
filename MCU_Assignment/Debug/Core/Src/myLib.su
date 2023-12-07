@@ -12,4 +12,4 @@ myLib.c:212:8:onRedPedes	8	static
 myLib.c:216:8:clearPedesLed	8	static
 myLib.c:222:8:clearled	8	static
 myLib.c:234:8:buzzer_on	8	static
-myLib.c:262:8:buzzer_off	4	static
+myLib.c:266:8:buzzer_off	4	static

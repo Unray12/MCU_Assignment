@@ -68,10 +68,6 @@ void fsm_automatic_run() {
 			setTimer(2, 10); //update leds
 			uart_communication_fsm();
 		}
-		if (isButtonPressed(3)) { // pedestrian nho' check cac state khac khi bam nut
-			buzzer_flag=1;
-			status_pedestrian=PEDESTRIAN;
-		}
 		if (timerFlag[0] == 1){
 			status = AUTO_RED_AMBER;
 
@@ -81,6 +77,10 @@ void fsm_automatic_run() {
 			setTimer(0, amberTime);
 		}
 		countDown();
+		if (isButtonPressed(3)) { // pedestrian nho' check cac state khac khi bam nut
+			buzzer_flag=1;
+			status_pedestrian=PEDESTRIAN;
+		}
 		break;
 	case AUTO_RED_AMBER:
 		redAmberLed();
@@ -103,6 +103,10 @@ void fsm_automatic_run() {
 			setTimer(0, greenTime);
 		}
 		countDown();
+		if (isButtonPressed(3)) { // pedestrian nho' check cac state khac khi bam nut
+			buzzer_flag=1;
+			status_pedestrian=PEDESTRIAN;
+		}
 		isButtonPressed(0);
 		break;
 	case AUTO_GREEN_RED:
@@ -126,6 +130,10 @@ void fsm_automatic_run() {
 			setTimer(0, amberTime);
 		}
 		countDown();
+		if (isButtonPressed(3)) { // pedestrian nho' check cac state khac khi bam nut
+			buzzer_flag=1;
+			status_pedestrian=PEDESTRIAN;
+		}
 		isButtonPressed(0);
 		break;
 	case AUTO_AMBER_RED:
@@ -149,6 +157,10 @@ void fsm_automatic_run() {
 			setTimer(0, greenTime);
 		}
 		countDown();
+		if (isButtonPressed(3)) { // pedestrian nho' check cac state khac khi bam nut
+			buzzer_flag=1;
+			status_pedestrian=PEDESTRIAN;
+		}
 		isButtonPressed(0);
 		break;
 	default:

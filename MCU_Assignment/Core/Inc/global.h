@@ -37,6 +37,6 @@
 extern int status;
 extern int status_pedestrian;
 extern int buzzer_flag;
-
+extern int b;
 
 #endif /* INC_GLOBAL_H_ */

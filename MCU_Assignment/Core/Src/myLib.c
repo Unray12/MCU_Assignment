@@ -232,32 +232,36 @@ void updateLedBuffer() {
   int duty=0;
 
   void buzzer_on() {
-	  if (status==AUTO_RED_GREEN) {
-		  if (buzzer_flag==1) {
-			  if (currentLed24>2) {
-				  currentLed24=2;
-				  setTimer(4, 200);
-				  time_buzzer=200;
-//				  onRedPedes();
-			  } else {
-				  setTimer(4, (currentLed24+1)*100);
-				  time_buzzer=(currentLed24+1)*100;
-//				  onAmberPedes();
-			  }
-			  buzzer_flag=0;
-			  duty=0;
-			  timerFlag[6]=1;
-		  }
-		  if (duty>=100) {
-			  duty=0;
-		  }
-		  __HAL_TIM_SetCompare (&htim3,TIM_CHANNEL_1,duty);
-		  if (timerFlag[6]==1) {
-			  duty+=1;
-			  setTimer(6, time_buzzer/100);
-		  }
-	  }
-  }
+  		  if (buzzer_flag==1) {
+  //			  if (currentLed24>2) {
+  //				  currentLed24=2;
+  //				  setTimer(3, 200);
+  //				  time_buzzer=200;
+  ////				  onRedPedes();
+  //			  } else {
+  //				  setTimer(3, (currentLed24+1)*100);
+  //				  time_buzzer=(currentLed24+1)*100;
+  ////				  onAmberPedes();
+  //			  }
+  			  if (b==1) {
+  				  time_buzzer=realGreenTime*100;
+  				  b=0;
+  			  } else {
+  				  time_buzzer=currentLed13*100;
+  			  }
+  			  buzzer_flag=0;
+  			  duty=0;
+  			  timerFlag[6]=1;
+  		  }
+  		  if (duty>=100) {
+  			  duty=0;
+  		  }
+  		  __HAL_TIM_SetCompare (&htim3,TIM_CHANNEL_1,duty);
+  		  if (timerFlag[6]==1) {
+  			  duty+=1;
+  			  setTimer(6, time_buzzer/100);
+  		  }
+    }
 
   void buzzer_off() {
 	  __HAL_TIM_SetCompare (&htim3,TIM_CHANNEL_1,0);

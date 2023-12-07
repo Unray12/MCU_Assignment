@@ -70,15 +70,15 @@ int isOKreceived(){
 void uart_transmit(){
 	switch(status){
 	case TUNING_AMBER:
-		ADC_value = buffer[0] * 10 + buffer[1];
+		ADC_value = led_buffer[0] * 10 + led_buffer[1];
 		HAL_UART_Transmit(&huart2, (void*)str, sprintf(str, "!TUNING AMBER: %d# \r\n", ADC_value), 1000);
 		break;
 	case TUNING_GREEN:
-		ADC_value = buffer[0] * 10 + buffer[1];
+		ADC_value = led_buffer[0] * 10 + led_buffer[1];
 		HAL_UART_Transmit(&huart2, (void*)str, sprintf(str, "!TUNING GREEN: %d# \r\n", ADC_value), 1000);
 		break;
 	case TUNING_RED:
-		ADC_value = buffer[0] * 10 + buffer[1];
+		ADC_value = led_buffer[0] * 10 + led_buffer[1];
 		HAL_UART_Transmit(&huart2, (void*)str, sprintf(str, "!TUNING RED: %d# \r\n", ADC_value), 1000);
 		break;
 	case MANUAL_AMBER_RED:
